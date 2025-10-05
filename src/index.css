@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+@font-face {
+  font-family : 'Helvetica Now Display';
+  src: url(/fonts/HelveticaNowDisplay-Regular.otf) format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Now Display';
+  src: url(/fonts/HelveticaNowDisplay-Light.otf) format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Now Display';
+  src: url(/fonts/HelveticaNowDisplay-ExtLt.otf) format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Now Display';
+  src: url(/fonts/HelveticaNowDisplay-Medium.otf) format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Now Display';
+  src: url(/fonts/HelveticaNowDisplay-Bold.otf) format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+
+:root {
+  /* --background: #ffffff; */
+  --font-helvetica: 'Helvetica Now Display', Arial, sans-serif;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    /* --foreground: #ededed; */
+  }
+}
+
+body {
+  background: var(--background);
+  /* color: var(--foreground); */
+  font-family: var(--font-helvetica);
+  overflow-x: hidden;
+
+}
+
+.font-helvetica {
+  font-family: var(--font-helvetica);
+}
+
+.font-playfair {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+}
+
+.text-darkgreen {
+  color: #10551E;
+}
+
+.bg-darkgreen {
+  background-color: #10551E;
+}
