@@ -31,7 +31,7 @@ const features = [
     alt: '24/7 availability icon',
   },
   {
-    title: 'Quick booking',
+    title: 'Quick<br/> booking',
     icon: quickBookingIcon,
     alt: 'Quick booking icon',
   },
@@ -82,10 +82,10 @@ const FeatureCard = ({ feature, index }) => (
     </motion.div>
     <motion.div 
       className='md:w-[25%] flex-shrink-0'
-      initial={{ scale: 0, rotate: -180 }}
-      whileInView={{ scale: 1, rotate: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1 + 0.3, type: "spring" }}
+      // initial={{ scale: 0, rotate: -180 }}
+      // whileInView={{ scale: 1, rotate: 0 }}
+      // viewport={{ once: true }}
+      // transition={{ duration: 0.6, delay: index * 0.1 + 0.3, type: "spring" }}
     >
       <img 
         src={feature.icon} 
@@ -100,7 +100,7 @@ const FeatureSection = () => {
   const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   return (
-    <section className="py-12 bg-white overflow-hidden">
+    <section className="md:py-12 py-4 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {isDesktop ? (
           <div className="grid grid-cols-4 gap-6">

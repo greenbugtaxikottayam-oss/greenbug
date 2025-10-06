@@ -107,7 +107,7 @@ function Banner() {
   };
 
   return (
-    <div className="relative md:mx-4 mx-2 my-1 min-h-screen overflow-hidden rounded-xl" id="home">
+    <div className="relative md:mx-4 mx-2 my-1 md:h-screen h-[87vh] overflow-hidden rounded-xl" id="home">
       <motion.img
         src={banner}
         loading="lazy"
@@ -120,7 +120,7 @@ function Banner() {
 
       {/* Main content wrapper */}
       <motion.div 
-        className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center pt-36 md:pt-28"
+        className="relative z-10 flex flex-col items-center justify-start h-full px-4 text-center pt-20 md:pt-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
