@@ -184,7 +184,7 @@ const BookingForm = () => {
                 <option value="Executive Force AC Travellers">Executive Force AC Travellers</option>
                 <option value="Toyota Innova">Toyota Innova</option>
               </select>
-              <div className="absolute inset-y-0 right-3 flex items-center px-2 pointer-events-none bg-green-800 text-white rounded-full m-1.5">
+              <div className="absolute inset-y-0 md:right-3 right-2 flex items-center px-2.5 pointer-events-none bg-green-800 text-white rounded-full m-1.5">
                 <IoChevronDown />
               </div>
             </div>
@@ -197,7 +197,7 @@ const BookingForm = () => {
                 <option value="airport">Airport Transfer</option>
                 <option value="local">Local Package</option>
               </select>
-              <div className="absolute inset-y-0 right-3 flex items-center px-2 pointer-events-none bg-green-800 text-white rounded-full m-1.5">
+              <div className="absolute inset-y-0 md:right-3 right-2 flex items-center px-2.5 pointer-events-none bg-green-800 text-white rounded-full m-1.5">
                 <IoChevronDown />
               </div>
             </div>

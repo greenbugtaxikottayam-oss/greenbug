@@ -73,9 +73,9 @@ const Footer = () => {
                 />
                 <button 
                   type="submit" 
-                  className="bg-green-500 text-white rounded-r-full px-4 flex items-center justify-center hover:bg-green-600 transition-colors"
+                  className="bg-green-500 text-white rounded-r-full pl-3 pr-4 flex items-center justify-center hover:bg-green-600 transition-colors "
                 >
-                  <FiSend className="text-lg" />
+                  <FiSend className="text-lg rotate-45" />
                 </button>
               </form>
             </div>
@@ -203,9 +203,9 @@ const Footer = () => {
               />
               <button 
                 type="submit" 
-                className="bg-green-500 text-white rounded-r-full px-4 flex items-center justify-center hover:bg-green-600 transition-colors"
+                className="bg-green-500 text-white rounded-r-full pl-3 pr-4  flex items-center justify-center hover:bg-green-600 transition-colors"
               >
-                <FiSend className="text-lg" />
+                <FiSend className="text-lg rotate-45" />
               </button>
             </form>
           </div>
