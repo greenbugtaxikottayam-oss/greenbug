@@ -111,6 +111,12 @@ const FeatureSection = () => {
             ))}
           </div>
         ) : (
+           <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5 }}
+                      className=''>
           <Swiper
             modules={[Autoplay]}
             loop={true}
@@ -125,17 +131,12 @@ const FeatureSection = () => {
           >
             {features.map((feature, index) => (
               <SwiperSlide key={index}>
-                <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5 }}
-                      className=''>
+               
                 <FeatureCard feature={feature} index={index} />
-                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
+          </motion.div>
         )}
       </div>
     </section>
