@@ -5,6 +5,24 @@ import car1 from '../../../assets/images/car1.png';
 import { FaWhatsapp } from "react-icons/fa";
 
 function Banner() {
+
+    const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const navbarHeight = 80;
+      const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+      
+      window.scrollTo({
+        top: sectionTop,
+        behavior: 'smooth',
+      });
+
+      setActiveSection(id);
+      setIsOpen(false);
+    }
+  };
+
+  
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -107,7 +125,7 @@ function Banner() {
   };
 
   return (
-    <div className="relative md:mx-4 mx-2 my-1 md:h-screen h-[87vh] overflow-hidden rounded-xl" id="home">
+    <div className="relative md:mx-4 mx-2 my-1 md:h-screen h-[67vh] overflow-hidden rounded-xl" id="home">
       <motion.img
         src={banner}
         loading="lazy"
@@ -120,7 +138,7 @@ function Banner() {
 
       {/* Main content wrapper */}
       <motion.div 
-        className="relative z-10 flex flex-col items-center justify-start h-full px-4 text-center pt-20 md:pt-20"
+        className="relative z-10 flex flex-col items-center justify-start h-full px-4 text-center pt-6 md:pt-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -128,7 +146,7 @@ function Banner() {
         
         {/* Sub-headline / Tagline */}
         <motion.div 
-          className="bg-white/30 bg-opacity-10 text-white text-sm px-5 py-2 rounded-full mb-6 max-w-max"
+          className="bg-white/30 bg-opacity-10 text-white text-xs px-5 py-2 rounded-full md:mb-6 mb-4 "
           variants={taglineVariants}
           whileHover={{ scale: 1.05 }}
         >
@@ -137,7 +155,7 @@ function Banner() {
 
         {/* Main Headline */}
         <motion.h1 
-          className="text-4xl text-white sm:text-5xl md:text-5xl lg:text-6xl mb-7 max-w-3xl"
+          className="text-4xl text-white sm:text-5xl md:text-5xl lg:text-6xl md:mb-7  mb-5 max-w-3xl"
           variants={headlineVariants}
         >
           Ride Smart, Ride<br/> Green in Kottayam
@@ -145,7 +163,7 @@ function Banner() {
 
         {/* Description */}
         <motion.p 
-          className="text-white text-opacity-80 text-sm md:text-base mb-10 max-w-3xl"
+          className="text-white text-opacity-80 text-sm md:text-base md:mb-10 mb-8  max-w-3xl"
           variants={descriptionVariants}
         >
           Book your taxi instantly with Green Bug Taxi – the fastest, most reliable way to travel across Kottayam city. Safe rides, eco-friendly fleet, and trusted local drivers.
@@ -157,6 +175,7 @@ function Banner() {
           variants={buttonsVariants}
         >
           <motion.button 
+            onClick={() => scrollToSection('BookNow')} 
             className="bg-white text-green-800 px-8 py-1 rounded-full text-lg shadow-lg hover:bg-gray-100 transition duration-300"
             variants={buttonHoverVariants}
             whileHover="hover"
@@ -165,20 +184,22 @@ function Banner() {
             Book Now!
           </motion.button>
           
-          <motion.button 
-            className="flex items-center justify-center gap-3 border-2 border-white text-white font-semibold px-8 py-1 rounded-full text-lg transition duration-300"
-            variants={whatsappButtonVariants}
-            whileHover="hover"
-            whileTap="tap"
+          <motion.a
+          href="https://wa.me/918129994655" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-3 border-2 border-white text-white px-8 py-1 rounded-full text-lg shadow-lg hover:bg-white hover:text-green-800 transition duration-300"
+          whileHover={{ scale: 1.05 }} 
+          whileTap={{ scale: 0.95 }}   
+        >
+          <motion.div
+            animate={{ rotate: [0, 10, -10, 10, 0] }}
+            transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 3 }}
           >
-            <motion.div
-              animate={{ rotate: [0, 10, -10, 10, 0] }}
-              transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 3 }}
-            >
-              <FaWhatsapp className='w-5 h-6' />
-            </motion.div>
-            Get a Quote
-          </motion.button>
+            <FaWhatsapp className='w-5 h-5' />
+          </motion.div>
+          Get a Quote
+        </motion.a>
         </motion.div>
 
       </motion.div>

@@ -60,37 +60,24 @@ const useMediaQuery = (query) => {
 
 const FeatureCard = ({ feature, index }) => (
   <motion.div 
-    className="flex md:flex-row flex-col gap-3 items-center justify-between md:py-4 md:px-4 py-2 px-1 bg-[#EEEEEE] rounded-2xl 
-               border-2 border-[#10551E] md:h-36 h-44 shadow-sm"
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-50px" }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(16, 85, 30, 0.2)" }}
+    className="flex md:flex-row flex-col gap-3 items-center justify-between md:py-4 md:px-4 py-2 px-1 bg-[#EEEEEE]/80 rounded-2xl 
+               border-1 border-[#10551E] md:h-36 h-38 shadow-sm"
   >
-    <motion.div 
-      className="w-[60%]"
-      initial={{ x: -20, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+    <div 
+      className="md:w-[60%] w-[90%] "
     >
       <h3
-        className="text-lg capitalize text-green-800 whitespace-nowrap"
+        className="md:text-lg text-xl capitalize text-green-800 whitespace-nowrap"
         dangerouslySetInnerHTML={{ __html: feature.title }}
       ></h3>
-    </motion.div>
+    </div>
     <motion.div 
-      className='md:w-[25%] flex-shrink-0'
-      // initial={{ scale: 0, rotate: -180 }}
-      // whileInView={{ scale: 1, rotate: 0 }}
-      // viewport={{ once: true }}
-      // transition={{ duration: 0.6, delay: index * 0.1 + 0.3, type: "spring" }}
+      className='md:w-[25%] md:flex-shrink-0'
     >
       <img 
         src={feature.icon} 
         alt={feature.alt} 
-        className="h-auto w-full object-contain md:pl-0 pl-8"
+        className="h-auto w-full object-contain md:pl-0 pl-9"
       />
     </motion.div>
   </motion.div>
@@ -100,7 +87,7 @@ const FeatureSection = () => {
   const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   return (
-    <section className="md:py-12 py-4 bg-white overflow-hidden">
+    <section className="md:py-12 py-0 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {isDesktop ? (
           <div className="grid grid-cols-4 gap-6">
@@ -118,7 +105,14 @@ const FeatureSection = () => {
           >
             {features.map((feature, index) => (
               <SwiperSlide key={index}>
+                <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+           className=''>
                 <FeatureCard feature={feature} index={index} />
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>

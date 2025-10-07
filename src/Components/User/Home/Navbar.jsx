@@ -181,6 +181,7 @@ const Navbar = () => {
                     </a>
                   </motion.div>
                   <motion.div 
+                    onClick={() => scrollToSection('BookNow')} 
                     className='flex border px-4 py-1 bg-white text-darkgreen rounded-full cursor-pointer'
                     variants={bookNowVariants}
                     whileHover="hover"

@@ -6,6 +6,21 @@ import circle from '../../../assets/images/circle.png';
 import { motion } from 'framer-motion';
 
 const BookRideBanner = () => {
+    const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const navbarHeight = 80;
+      const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+      
+      window.scrollTo({
+        top: sectionTop,
+        behavior: 'smooth',
+      });
+
+      setActiveSection(id);
+      setIsOpen(false);
+    }
+  };
   return (
     <div id="Book" className="relative md:mx-4 mx-3 my-1 md:h-[80vh] h-[58vh] overflow-hidden bg-gradient-to-b from-green-950 to-green-800 rounded-3xl">     
       <motion.div 
@@ -50,6 +65,7 @@ const BookRideBanner = () => {
           Easy online booking, live tracking, and instant confirmation
         </p>
         <motion.button 
+          onClick={() => scrollToSection('BookNow')} 
           className="bg-white text-green-800 font-semibold px-8 py-2 rounded-full text-lg shadow-lg hover:bg-gray-100 transition duration-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}

@@ -89,12 +89,12 @@ const VehicleCard = ({ vehicle, index }) => (
     transition={{ duration: 0.3, delay: index * 0.1 }}
     whileHover={{ y: -5, boxShadow: "0 15px 40px rgba(0,0,0,0.15)" }}
   >
-    <div className='absolute top-0 right-0 rounded-bl-3xl md:h-64 h-52 w-60 bg-green-700 '/>
-    <div className="relative h-48 sm:h-56 md:h-64 flex items-center justify-center rounded-t-xl overflow-hidden">
+    <div className='absolute top-0 right-0 rounded-bl-3xl md:h-64 h-54 w-60 bg-green-700 '/>
+    <div className="relative h-56  md:h-64 flex items-center justify-center rounded-t-xl overflow-hidden">
       <img
         src={vehicle.image}
         alt={vehicle.name}
-        className="object-contain object-center w-auto h-auto"
+        className="object-contain object-center  w-[90%] md:w-auto h-auto"
       />
     </div>
     <div className="p-6 flex-grow flex flex-col justify-between md:mt-0 mt-2">

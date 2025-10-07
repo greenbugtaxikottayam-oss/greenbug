@@ -170,26 +170,26 @@ const Footer = () => {
 
           <div className="flex space-x-4 md:hidden">
             <motion.a 
-              href="#" 
+             href="https://www.facebook.com/share/1CsG1sXFb2/"
               className="w-10 h-10 bg-white text-green-700 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
               whileHover={{ scale: 1.1, y: -3 }}
             >
               <FaFacebookF />
             </motion.a>
             <motion.a 
-              href="#" 
+             href="https://www.instagram.com/greenbug_taxi__kottayam?igsh=ZGZyZTgxYm44cHc2"  
               className="w-10 h-10 bg-white text-green-700 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
               whileHover={{ scale: 1.1, y: -3 }}
             >
               <FaInstagram />
             </motion.a>
-            <motion.a 
+            {/* <motion.a 
               href="#" 
               className="w-10 h-10 bg-white text-green-700 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
               whileHover={{ scale: 1.1, y: -3 }}
             >
               <FaYoutube />
-            </motion.a>
+            </motion.a> */}
           </div>
 
           {/* Column 4: Newsletter */}

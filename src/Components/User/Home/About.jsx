@@ -7,6 +7,22 @@ import car3 from '../../../assets/images/car3.png';
 import car4 from '../../../assets/images/car4.png';
 
 const About = () => {
+    const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const navbarHeight = 80;
+      const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+      
+      window.scrollTo({
+        top: sectionTop,
+        behavior: 'smooth',
+      });
+
+      setActiveSection(id);
+      setIsOpen(false);
+    }
+  };
+  
   return (
     <section className="bg-white md:py-16 py-6 px-4 md:px-8 border-b border-gray-200" id="About">
       <div className='max-w-7xl mx-auto'>
@@ -52,6 +68,7 @@ const About = () => {
               transparent pricing, and customer-first service.
             </p>
             <motion.button 
+             onClick={() => scrollToSection('BookNow')} 
               className="bg-[#10551E] text-white px-8 py-2 rounded-full shadow-md hover:bg-green-700 transition duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
