@@ -138,7 +138,7 @@ function Banner() {
 
       {/* Main content wrapper */}
       <motion.div 
-        className="relative z-10 flex flex-col items-center justify-start h-full px-4 text-center pt-10 md:pt-20"
+        className="relative z-10 flex flex-col items-center justify-start h-full px-4 text-center pt-14 md:pt-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
