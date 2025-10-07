@@ -138,7 +138,7 @@ function Banner() {
 
       {/* Main content wrapper */}
       <motion.div 
-        className="relative z-10 flex flex-col items-center justify-start h-full px-4 text-center pt-6 md:pt-20"
+        className="relative z-10 flex flex-col items-center justify-start h-full px-4 text-center pt-10 md:pt-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -146,7 +146,7 @@ function Banner() {
         
         {/* Sub-headline / Tagline */}
         <motion.div 
-          className="bg-white/30 bg-opacity-10 text-white text-xs px-5 py-2 rounded-full md:mb-6 mb-4 "
+          className="bg-white/30 bg-opacity-10 text-white text-xs px-5 py-1.5 rounded-full md:mb-6 mb-3 "
           variants={taglineVariants}
           whileHover={{ scale: 1.05 }}
         >
@@ -155,7 +155,7 @@ function Banner() {
 
         {/* Main Headline */}
         <motion.h1 
-          className="text-4xl text-white sm:text-5xl md:text-5xl lg:text-6xl md:mb-7  mb-5 max-w-3xl"
+          className="text-4xl text-white sm:text-5xl md:text-5xl lg:text-6xl md:mb-7  mb-4 max-w-3xl"
           variants={headlineVariants}
         >
           Ride Smart, Ride<br/> Green in Kottayam
@@ -163,7 +163,7 @@ function Banner() {
 
         {/* Description */}
         <motion.p 
-          className="text-white text-opacity-80 text-sm md:text-base md:mb-10 mb-8  max-w-3xl"
+          className="text-white text-opacity-80 text-sm md:text-base md:mb-10 mb-6  max-w-3xl"
           variants={descriptionVariants}
         >
           Book your taxi instantly with Green Bug Taxi – the fastest, most reliable way to travel across Kottayam city. Safe rides, eco-friendly fleet, and trusted local drivers.
@@ -171,7 +171,7 @@ function Banner() {
 
         {/* Buttons */}
         <motion.div 
-          className="flex flex-col sm:flex-row gap-4 mb-8"
+          className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-8"
           variants={buttonsVariants}
         >
           <motion.button 
@@ -200,6 +200,7 @@ function Banner() {
           </motion.div>
           Get a Quote
         </motion.a>
+
         </motion.div>
 
       </motion.div>

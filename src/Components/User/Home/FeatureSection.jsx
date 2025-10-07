@@ -8,6 +8,11 @@ import safeEcoFriendlyIcon from '../../../assets/images/icon3.png';
 import availability247Icon from '../../../assets/images/icon4.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import {
+  Autoplay,
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/autoplay";
 
 const features = [
   {
@@ -40,6 +45,16 @@ const features = [
     icon: localTrustIcon,
     alt: 'Local trust icon',
   },
+    {
+    title: 'Safe &<br/> eco-friendly <br/>rides',
+    icon: safeEcoFriendlyIcon,
+    alt: 'Safe and eco-friendly rides icon',
+  },
+  {
+    title: '24/7 <br/> availability',
+    icon: availability247Icon,
+    alt: '24/7 availability icon',
+  },
 ];
 
 const useMediaQuery = (query) => {
@@ -67,7 +82,7 @@ const FeatureCard = ({ feature, index }) => (
       className="md:w-[60%] w-[90%] "
     >
       <h3
-        className="md:text-lg text-xl capitalize text-green-800 whitespace-nowrap"
+        className="md:text-lg text-xl capitalize text-green-800 whitespace-nowrap leading-tight"
         dangerouslySetInnerHTML={{ __html: feature.title }}
       ></h3>
     </div>
@@ -97,20 +112,25 @@ const FeatureSection = () => {
           </div>
         ) : (
           <Swiper
+            modules={[Autoplay]}
             loop={true}
             centeredSlides={true}
-            slidesPerView={2.3}
+            slidesPerView={2.4}
             spaceBetween={15}
+            autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+            }}
             className="!py-4"
           >
             {features.map((feature, index) => (
               <SwiperSlide key={index}>
                 <motion.div
                       initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-           className=''>
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5 }}
+                      className=''>
                 <FeatureCard feature={feature} index={index} />
                 </motion.div>
               </SwiperSlide>
