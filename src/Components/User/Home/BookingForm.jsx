@@ -100,11 +100,11 @@ const BookingForm = () => {
       viewport={{ once: true, amount: 0.2 }}
     >
       <div className="max-w-7xl mx-auto">
-        <motion.div className="text-center mb-10" variants={itemVariants}>
-          <h2 className="text-2xl sm:text-4xl text-center text-gray-800 inline-block">
-            Your Taxi is Waiting —
+        <motion.div className="text-center md:mb-10 mb-5" variants={itemVariants}>
+          <h2 className="text-2xl sm:text-4xl text-center text-gray-800 ">
+            Your Taxi is Waiting — <br className='md:hidden block'/>
           </h2>
-          <span className="text-2xl bg-green-800 text-white md:font-bold font-medium md:py-3 py-2 px-6 rounded-full ml-4 inline-block mt-2 md:mt-0">
+          <span className="text-2xl sm:text-4xl pl-2  text-darkgreen  inline-block">
             Book Now
           </span>
         </motion.div>
@@ -176,13 +176,15 @@ const BookingForm = () => {
             <div className="relative">
               <select name="vehicleType" value={formData.vehicleType} onChange={handleChange} className="w-full bg-white rounded-full py-3 px-5 text-gray-800 appearance-none focus:outline-none focus:ring-2 focus:ring-green-600 cursor-pointer" required>
                 <option value="" disabled>Vehicle Type</option>
-                <option value="toyota etios">Toyota Etios</option>
-                <option value="Suzuki Dzire">Suzuki Dzire</option>
-                <option value="Innova Crysta">Innova Crysta</option>
-                <option value="Mercedes Benz Luxury AC Coach">Mercedes Benz Luxury AC Coach</option>
-                <option value="AC Air Bus">AC Air Bus</option>
-                <option value="Executive Force AC Travellers">Executive Force AC Travellers</option>
-                <option value="Toyota Innova">Toyota Innova</option>
+                <option value="Sedan">Sedan</option>
+                <option value="Compact MUV">Compact MUV</option>
+                <option value="MUV">MUV</option>
+                <option value="Premium MUV">Premium MUV</option>
+                <option value="Executive Traveller">Executive Traveller</option>
+                <option value="Luxury Bus - 34 seater">Luxury Bus - 34 seater</option>
+                <option value="Luxury Bus - 45 seater">Luxury Bus - 45 seater</option>
+                <option value="Luxury Bus - 49 seater">Luxury Bus - 49 seater</option>
+                <option value="Others">Others</option>
               </select>
               <div className="absolute inset-y-0 md:right-3 right-2 flex items-center px-2.5 pointer-events-none bg-green-800 text-white rounded-full m-1.5">
                 <IoChevronDown />
@@ -192,10 +194,13 @@ const BookingForm = () => {
             <div className="relative">
               <select name="tripType" value={formData.tripType} onChange={handleChange} className="w-full bg-white rounded-full py-3 px-5 text-gray-800 appearance-none focus:outline-none focus:ring-2 focus:ring-green-600 cursor-pointer" required>
                 <option value="" disabled>Trip Type</option>
-                <option value="one-way">One Way</option>
-                <option value="round-trip">Round Trip</option>
-                <option value="airport">Airport Transfer</option>
-                <option value="local">Local Package</option>
+                <option value="City Travel">City Travel</option>
+                <option value="Multi day packages">Multi day packages</option>
+                <option value="Sabarimala package">Sabarimala package</option>
+                <option value="Airport pickup and Drop">Airport pickup and Drop</option>
+                <option value="Outstation Trip">Outstation Trip</option>
+                <option value="Pilgrim Package">Pilgrim Package</option>
+                <option value="Marriage Trip">Marriage Trip </option>
               </select>
               <div className="absolute inset-y-0 md:right-3 right-2 flex items-center px-2.5 pointer-events-none bg-green-800 text-white rounded-full m-1.5">
                 <IoChevronDown />
